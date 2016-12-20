@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AndroidRNSample</string>
     <string name="open_react">打开React</string>
+    <string name="native_text">我是原生组件</string>
 </resources>

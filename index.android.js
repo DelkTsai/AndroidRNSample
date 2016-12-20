@@ -10,10 +10,20 @@ class HelloWorld extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.hello}>Hello, World</Text>
+        <Text style={styles.hello}>我是React组件</Text>
       </View>
     )
   }
+}
+
+class TestComp extends React.Component {
+    render() {
+      return (
+         <View style={styles.container}>
+                <Text style={styles.hello}>我是Test组件</Text>
+              </View>
+      )
+    }
 }
 var styles = StyleSheet.create({
   container: {
@@ -28,3 +38,4 @@ var styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
+AppRegistry.registerComponent('TestComp', () => TestComp);

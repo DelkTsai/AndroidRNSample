@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.initOpenReactBtn();
+        this.initOpenReactActivityBtn();
     }
 
     private void initOpenReactBtn() {
@@ -29,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,MyReactActivity.class));
+            }
+        });
+    }
+
+    private void initOpenReactActivityBtn() {
+        Button react = (Button) this.findViewById(R.id.open_react_activity_btn);
+        react.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ReactActivityTest.class));
             }
         });
     }

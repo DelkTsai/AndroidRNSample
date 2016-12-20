@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_react_test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yonghui.h5.androidrnsample.ReactActivityTest">
+    <TextView
+        android:layout_height="40dp"
+        android:background="@color/nomal_bg"
+        android:text="@string/native_text"
+        android:layout_width="match_parent"
+        android:textAlignment="center"/>
+
+    <com.facebook.react.ReactRootView
+        android:id="@+id/react_root_view_1"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.facebook.react.ReactRootView>
+
+    <com.facebook.react.ReactRootView
+        android:id="@+id/react_root_view_2"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.facebook.react.ReactRootView>
+
+</LinearLayout>

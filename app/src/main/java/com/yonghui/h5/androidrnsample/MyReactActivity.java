@@ -3,6 +3,7 @@ package com.yonghui.h5.androidrnsample;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.widget.LinearLayout;
 
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
@@ -17,7 +18,6 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mReactRootView = new ReactRootView(this);
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
                 .setBundleAssetName("index.android.bundle")
@@ -27,8 +27,15 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
+        setContentView(R.layout.my_react_activity);
+        this.addReactComponent();
+    }
+
+    private void addReactComponent() {
+        mReactRootView = new ReactRootView(this);
         mReactRootView.startReactApplication(mReactInstanceManager,"HelloWorld",null);
-        setContentView(mReactRootView);
+        LinearLayout reactWrapper = (LinearLayout) findViewById(R.id.react_section);
+        reactWrapper.addView(mReactRootView);
     }
 
     @Override
