@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AndroidRNSample</string>
+    <string name="open_react">打开React</string>
+</resources>
