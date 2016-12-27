@@ -17,10 +17,11 @@ export default class Button extends Component {
     const {
       txt,
       bgStyle,
-      txtStyle
+      txtStyle,
+      callback
     } = this.props;
     return (
-      <TouchableOpacity style={bgStyle}>
+      <TouchableOpacity style={bgStyle} onPress={callback}>
         <Text style={txtStyle}> {txt}</Text>
       </TouchableOpacity>
     );
@@ -30,7 +31,12 @@ export default class Button extends Component {
 Button.propTypes = {
   txt: PropTypes.string,
   bgStyle: PropTypes.object,
-  txtStyle: PropTypes.object
+  txtStyle: PropTypes.object,
+  callback: PropTypes.func
+};
+
+Button.defaultProps = {
+  callback: ()=>{console.log('click button')}
 };
 
 const styles = StyleSheet.create({

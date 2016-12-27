@@ -11,7 +11,8 @@ import {
 } from 'react-native';
 import {
   FullPage,
-  Button
+  Button,
+  OpenLogin
 } from 'yhui';
 import {
   Logo,
@@ -20,6 +21,12 @@ import {
 export default class Login extends Component {
   constructor(props) {
    super(props); 
+   this.goToLoginPage = this.goToLoginPage.bind(this);  
+  }
+
+  goToLoginPage() {
+    console.log(OpenLogin);
+    OpenLogin.openLoginPage();
   }
 
   render() {
@@ -31,7 +38,7 @@ export default class Login extends Component {
     };
     return (<FullPage backgroundColor="#F5F5F5">
       <Logo />
-      <Button bgStyle={loginBgStyle} txtStyle={loginTxtStyle} txt={"登录"}/>
+      <Button bgStyle={loginBgStyle} txtStyle={loginTxtStyle} txt={"登录"} callback={this.goToLoginPage}/>
     </FullPage>);
   }
 }
