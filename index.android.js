@@ -8,6 +8,9 @@ import {
 import {
   FullPage
 } from 'yhui';
+import {
+  Login
+} from 'pages';
 
 class HelloWorld extends React.Component {
   render() {
@@ -49,4 +52,4 @@ var styles = StyleSheet.create({
 
 AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
 AppRegistry.registerComponent('TestComp', () => TestComp);
-// AppRegistry.registerComponent('Login', ()=>Login);
+AppRegistry.registerComponent('Login', ()=>Login);

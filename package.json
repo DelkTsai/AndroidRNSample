@@ -37,7 +37,9 @@
           "module-resolver", {
             "root": ["./"],
             "alias": {
-              "yhui": "components"
+              "yhui": "components",
+              "pages": "containers",
+              "imgs":"imgs"
             }
           }
         ]

@@ -24,4 +24,10 @@
         android:id="@+id/open_react_activity_btn"
         android:text="打开ReactActivity"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/open_react_login_page"
+        android:text="打开Login页面"/>
+
 </LinearLayout>
