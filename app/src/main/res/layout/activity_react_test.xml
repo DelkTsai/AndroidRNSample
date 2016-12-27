@@ -6,12 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.yonghui.h5.androidrnsample.ReactActivityTest">
-    <TextView
-        android:layout_height="40dp"
-        android:background="@color/nomal_bg"
-        android:text="@string/native_text"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:textAlignment="center"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/txt_input"
+            android:textSize="15dp"
+            android:hint="请输入"
+            android:layout_height="40dp"/>
+    </LinearLayout>
+
 
     <com.facebook.react.ReactRootView
         android:id="@+id/react_root_view_1"

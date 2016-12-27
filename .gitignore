@@ -7,5 +7,5 @@
 /build
 /captures
 .externalNativeBuild
-node_modules/
-npm-debug.log
+/node_modules
+npm-debug.*

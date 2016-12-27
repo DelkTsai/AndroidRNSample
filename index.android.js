@@ -5,23 +5,33 @@ import {
   Text,
   View
 } from 'react-native';
+import {
+  FullPage
+} from 'yhui';
 
 class HelloWorld extends React.Component {
   render() {
+    const {
+      name
+    } = this.props; 
     return (
       <View style={styles.container}>
-        <Text style={styles.hello}>我是React组件</Text>
+        <Text style={styles.hello}>{name}</Text>
       </View>
     )
   }
 }
 
 class TestComp extends React.Component {
+ 
     render() {
+      const {
+        name
+      } = this.props;
       return (
-         <View style={styles.container}>
-                <Text style={styles.hello}>我是Test组件</Text>
-              </View>
+         <FullPage backgroundColor="yellow">
+                <Text style={styles.hello}>{name}</Text>
+              </FullPage>
       )
     }
 }
@@ -39,3 +49,4 @@ var styles = StyleSheet.create({
 
 AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
 AppRegistry.registerComponent('TestComp', () => TestComp);
+// AppRegistry.registerComponent('Login', ()=>Login);
