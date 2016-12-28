@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="gray_bg">#F3F4F5</color>
     <color name="nomal_bg">#ccc</color>
+    <color name="tab_normal">#FCFCFC</color>
+    <color name="tab_pressed">#CCC</color>
 </resources>

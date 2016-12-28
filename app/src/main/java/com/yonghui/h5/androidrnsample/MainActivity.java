@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         this.initOpenReactBtn();
         this.initOpenReactActivityBtn();
         this.initOpenLoginPageBtn();
+        this.initOpenTabPageBtn();
     }
 
     private void initOpenReactBtn() {
@@ -53,5 +54,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,LoginActivity.class));
             }
         });
+    }
+
+    private void initOpenTabPageBtn() {
+        Button goTabs = (Button) this.findViewById(R.id.tab_activity_btn);
+        goTabs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,TabActivity.class));
+            }
+        });
+
     }
 }

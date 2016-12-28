@@ -30,4 +30,10 @@
         android:id="@+id/open_react_login_page"
         android:text="打开Login页面"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tab_activity_btn"
+        android:text="打开TabActivity页面"/>
+
 </LinearLayout>
