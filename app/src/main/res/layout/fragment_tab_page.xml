@@ -4,10 +4,9 @@
     android:layout_height="match_parent"
     tools:context="com.yonghui.h5.fragments.TabPageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.facebook.react.ReactRootView
+        android:id="@+id/reactContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

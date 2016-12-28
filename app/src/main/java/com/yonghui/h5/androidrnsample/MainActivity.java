@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.yonghui.h5.rnmanager.RNManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         this.initOpenReactActivityBtn();
         this.initOpenLoginPageBtn();
         this.initOpenTabPageBtn();
+        //初始化ReactInstanceManager 单例模式
     }
 
     private void initOpenReactBtn() {

@@ -1,14 +1,17 @@
 package com.yonghui.h5.fragments;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.facebook.react.ReactActivity;
+import com.facebook.react.ReactRootView;
 import com.yonghui.h5.androidrnsample.R;
+import com.yonghui.h5.rnmanager.RNManager;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +32,7 @@ public class TabPageFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    private View mTabPageView;
 
     public TabPageFragment() {
         // Required empty public constructor
@@ -65,7 +69,15 @@ public class TabPageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab_page, container, false);
+        mTabPageView = inflater.inflate(R.layout.fragment_tab_page, container, false);
+        initReactComponent();
+        return mTabPageView;
+    }
+
+    private void initReactComponent() {
+        ReactRootView mReactRootView = (ReactRootView) mTabPageView.findViewById(R.id.reactContainer);
+        ReactActivity activity = (ReactActivity)getActivity();
+        mReactRootView.startReactApplication(RNManager._getReactInstanceManager(),"Login");
     }
 
     // TODO: Rename method, update argument and hook method into UI event
