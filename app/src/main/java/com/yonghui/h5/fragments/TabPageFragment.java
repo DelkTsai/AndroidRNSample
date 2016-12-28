@@ -7,25 +7,22 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.yonghui.h5.androidrnsample.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link TabFragment.OnFragmentInteractionListener} interface
+ * {@link TabPageFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link TabFragment#newInstance} factory method to
+ * Use the {@link TabPageFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TabFragment extends Fragment {
+public class TabPageFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    private View mFragmentView;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -33,7 +30,7 @@ public class TabFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public TabFragment() {
+    public TabPageFragment() {
         // Required empty public constructor
     }
 
@@ -43,11 +40,11 @@ public class TabFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment TabFragment.
+     * @return A new instance of fragment TabPageFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TabFragment newInstance(String param1, String param2) {
-        TabFragment fragment = new TabFragment();
+    public static TabPageFragment newInstance(String param1, String param2) {
+        TabPageFragment fragment = new TabPageFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -68,40 +65,13 @@ public class TabFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        mFragmentView = inflater.inflate(R.layout.fragment_tab, container, false);
-        initBtns();
-        return mFragmentView;
-    }
-
-    private void initBtns() {
-        TabFragment that = this;
-        LinearLayout placeOrder = (LinearLayout) mFragmentView.findViewById(R.id.placeOrder);
-        placeOrder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                that.onButtonPressed(0);
-            }
-        });
-        LinearLayout showOrders = (LinearLayout) mFragmentView.findViewById(R.id.showOrders);
-        showOrders.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                that.onButtonPressed(1);
-            }
-        });
-        LinearLayout showChart = (LinearLayout) mFragmentView.findViewById(R.id.showChart);
-        showChart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                that.onButtonPressed(2);
-            }
-        });
+        return inflater.inflate(R.layout.fragment_tab_page, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(int index) {
+    public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onTabFragmentInteraction(index);
+            mListener.onTabPageFragmentInteraction(uri);
         }
     }
 
@@ -134,6 +104,6 @@ public class TabFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onTabFragmentInteraction(int tabIndex);
+        void onTabPageFragmentInteraction(Uri uri);
     }
 }
