@@ -13,6 +13,11 @@ android {
         jackOptions {
             enabled true
         }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : "com.yonghui.h5.androidrnsample",
+                JPUSH_APPKEY : "615eeb8a6df03ba4a7fd5a82", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
     }
     buildTypes {
         release {
@@ -37,5 +42,7 @@ dependencies {
     compile 'com.facebook.react:react-native:+'
     compile 'com.android.support:support-v4:23.4.0'
     compile 'me.dm7.barcodescanner:zxing:+'
+    compile 'cn.jiguang.sdk:jpush:3.0.0'
+    compile 'cn.jiguang.sdk:jcore:1.0.0'
     testCompile 'junit:junit:4.12'
 }

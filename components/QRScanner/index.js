@@ -8,7 +8,8 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  Image
+  Image,
+  ToastAndroid
 } from 'react-native';
 
 export default class QRScanner extends Component {
@@ -24,9 +25,11 @@ export default class QRScanner extends Component {
     try {
       const qrresult = await Natives.OpenQRScanner.openQRScanner();
       console.log(qrresult);
+      ToastAndroid.show(qrresult,ToastAndroid.LONG);
       callback && callback(qrresult,null);
     }catch(e) {
       console.log(e);
+      ToastAndroid.show(JSON.stringify(e),ToastAndroid.LONG);
       callback && callback(null,e);
     }
   }

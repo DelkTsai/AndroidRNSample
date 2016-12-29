@@ -11,11 +11,21 @@ import com.yonghui.h5.bridge.AddReactPackage;
 import java.util.Arrays;
 import java.util.List;
 
+import cn.jpush.android.api.JPushInterface;
+
 /**
  * Created by wulihong on 16/12/20.
  */
 
 public class MainApplication extends Application implements ReactApplication {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(this);
+    }
+
     private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
         @Override
         protected boolean getUseDeveloperSupport() {
