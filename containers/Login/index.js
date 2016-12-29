@@ -12,7 +12,8 @@ import {
 import {
   FullPage,
   Button,
-  OpenLogin
+  OpenLogin,
+  QRScanner
 } from 'yhui';
 import {
   Logo,
@@ -38,6 +39,7 @@ export default class Login extends Component {
     };
     return (<FullPage backgroundColor="#F5F5F5">
       <Logo />
+      <QRScanner/>
       <Button bgStyle={loginBgStyle} txtStyle={loginTxtStyle} txt={"登录"} callback={this.goToLoginPage}/>
     </FullPage>);
   }

@@ -31,7 +31,7 @@ public class AddReactPackage implements ReactPackage {
         List<NativeModule> modules = new ArrayList<>();
 
         modules.add(new OpenLoginModule(reactContext));
-
+        modules.add(new OpenQRScannerModule(reactContext));
         return modules;
     }
 }
