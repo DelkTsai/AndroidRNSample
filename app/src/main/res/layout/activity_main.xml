@@ -36,4 +36,10 @@
         android:id="@+id/tab_activity_btn"
         android:text="打开TabActivity页面"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/qr_activity"
+        android:text="打开二维码页面"/>
+
 </LinearLayout>

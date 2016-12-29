@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         this.initOpenReactActivityBtn();
         this.initOpenLoginPageBtn();
         this.initOpenTabPageBtn();
+        this.initQRCodePageBtn();
         //初始化ReactInstanceManager 单例模式
     }
 
@@ -68,5 +69,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void initQRCodePageBtn() {
+        Button qrBtn = (Button) this.findViewById(R.id.qr_activity);
+        qrBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,QrcodeActivity.class));
+            }
+        });
     }
 }

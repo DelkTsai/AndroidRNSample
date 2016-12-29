@@ -13,9 +13,6 @@ android {
         jackOptions {
             enabled true
         }
-        ndk {
-            abiFilters "armeabi-v7a", "x86"
-        }
     }
     buildTypes {
         release {
@@ -39,5 +36,6 @@ dependencies {
     compile 'io.reactivex:rxjava:1.1.6'
     compile 'com.facebook.react:react-native:+'
     compile 'com.android.support:support-v4:23.4.0'
+    compile 'me.dm7.barcodescanner:zxing:+'
     testCompile 'junit:junit:4.12'
 }
