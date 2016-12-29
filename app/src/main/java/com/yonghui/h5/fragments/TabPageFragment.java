@@ -1,5 +1,6 @@
 package com.yonghui.h5.fragments;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
@@ -80,7 +81,6 @@ public class TabPageFragment extends Fragment {
         mReactRootView.startReactApplication(RNManager._getReactInstanceManager(),"Login");
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onTabPageFragmentInteraction(uri);
@@ -88,7 +88,7 @@ public class TabPageFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Activity context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;

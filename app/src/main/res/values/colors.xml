@@ -7,4 +7,6 @@
     <color name="nomal_bg">#ccc</color>
     <color name="tab_normal">#FCFCFC</color>
     <color name="tab_pressed">#CCC</color>
+    <color name="tab_text_active">#589C3E</color>
+    <color name="tab_text_normal">#999999</color>
 </resources>

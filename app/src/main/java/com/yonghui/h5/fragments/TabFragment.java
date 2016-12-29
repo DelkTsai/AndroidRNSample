@@ -1,5 +1,6 @@
 package com.yonghui.h5.fragments;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
@@ -26,6 +27,9 @@ public class TabFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     private View mFragmentView;
+    private LinearLayout placeOrder;
+    private LinearLayout showOrders;
+    private LinearLayout showChart;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -75,40 +79,59 @@ public class TabFragment extends Fragment {
 
     private void initBtns() {
         TabFragment that = this;
-        LinearLayout placeOrder = (LinearLayout) mFragmentView.findViewById(R.id.placeOrder);
+        placeOrder = (LinearLayout) mFragmentView.findViewById(R.id.placeOrder);
+        showOrders = (LinearLayout) mFragmentView.findViewById(R.id.showOrders);
+        showChart = (LinearLayout) mFragmentView.findViewById(R.id.showChart);
         placeOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 that.onButtonPressed(0);
             }
         });
-        LinearLayout showOrders = (LinearLayout) mFragmentView.findViewById(R.id.showOrders);
         showOrders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 that.onButtonPressed(1);
             }
         });
-        LinearLayout showChart = (LinearLayout) mFragmentView.findViewById(R.id.showChart);
         showChart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 that.onButtonPressed(2);
             }
         });
+        that.onButtonPressed(0);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
+    public void activeBtn(int index) {
+        switch (index) {
+            case 0:
+                placeOrder.setSelected(true);
+                showOrders.setSelected(false);
+                showChart.setSelected(false);
+                break;
+            case 1:
+                placeOrder.setSelected(false);
+                showOrders.setSelected(true);
+                showChart.setSelected(false);
+                break;
+            case 2:
+                placeOrder.setSelected(false);
+                showOrders.setSelected(false);
+                showChart.setSelected(true);
+                break;
+        }
+    }
+
     public void onButtonPressed(int index) {
-        System.out.println("--------");
         if (mListener != null) {
-            System.out.println(index);
             mListener.onTabFragmentInteraction(index);
+            activeBtn(index);
         }
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Activity context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;

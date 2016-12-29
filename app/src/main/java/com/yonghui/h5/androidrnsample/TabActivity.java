@@ -16,6 +16,7 @@ import com.yonghui.h5.rnmanager.RNManager;
 
 public class TabActivity extends ReactActivity implements TabFragment.OnFragmentInteractionListener,TabPageFragment.OnFragmentInteractionListener{
     private ViewPager mViewPager;
+    private Fragment tabFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +29,7 @@ public class TabActivity extends ReactActivity implements TabFragment.OnFragment
 
     private  void addTabFragment() {
         FragmentManager fm = getFragmentManager();
-        Fragment tabFragment =  fm.findFragmentById(R.id.tabs_btns_fragment_holder);
+        tabFragment =  fm.findFragmentById(R.id.tabs_btns_fragment_holder);
         if(tabFragment == null) {
             tabFragment = TabFragment.newInstance("arr1","arr2");
             fm.beginTransaction()
@@ -48,6 +49,23 @@ public class TabActivity extends ReactActivity implements TabFragment.OnFragment
             @Override
             public int getCount() {
                 return 3;
+            }
+        });
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                System.out.println(position);
+                ((TabFragment)tabFragment).activeBtn(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
             }
         });
     }
