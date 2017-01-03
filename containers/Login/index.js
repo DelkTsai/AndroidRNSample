@@ -17,6 +17,7 @@ import {
 } from 'yhui';
 import {
   Logo,
+  UsernameInput
 } from './components';
 
 export default class Login extends Component {
@@ -32,14 +33,17 @@ export default class Login extends Component {
 
   render() {
     const loginBgStyle = {
-      borderRadius:2,marginLeft:25,marginRight:25,height:35,backgroundColor:'#24a8e8',alignItems:'center',justifyContent:'center'
+      borderRadius:2,marginLeft:25,marginRight:25,height:35,backgroundColor:'#589c3e',alignItems:'center',justifyContent:'center'
     };
     const loginTxtStyle = {
       fontSize:16,color:'#FFF'
     };
     return (<FullPage backgroundColor="#F5F5F5">
       <Logo />
-      <QRScanner/>
+      <View style={{marginBottom:30}}>
+      <UsernameInput/>
+      <UsernameInput/>
+      </View>
       <Button bgStyle={loginBgStyle} txtStyle={loginTxtStyle} txt={"登录"} callback={this.goToLoginPage}/>
     </FullPage>);
   }

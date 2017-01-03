@@ -42,4 +42,10 @@
         android:id="@+id/qr_activity"
         android:text="打开二维码页面"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/loading_btn"
+        android:text="打开Loading"/>
+
 </LinearLayout>

@@ -34,6 +34,7 @@ export default class QRScanner extends Component {
     }
   }
 
+
   render() {
     return(
       <TouchableOpacity onPress={this.startQRScan}>

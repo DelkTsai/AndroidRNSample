@@ -10,21 +10,19 @@ import {
 const Logo = (props) => {
   return (
     <View style={styles.logoSection}>
-      <Image style={styles.logo} source={require('imgs/yh_logo.png')}/>
+      <Image style={styles.logo} source={require('imgs/yh_logo@2x.png')}/>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   logoSection:{
-    marginTop:40,
-    marginBottom:40,
+    marginTop: 66,
+    marginBottom: 50,
     justifyContent:'center',
     flexDirection: 'row',
   },
   logo: {
-    width: 98,
-    height: 70.66
   }
 });
 
